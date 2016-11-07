@@ -260,6 +260,7 @@ float ADS1115::getMilliVolts(bool triggerAndPoll) {
       return (getConversion(triggerAndPoll) * ADS1115_MV_0P256);
       break;       
   }
+  return NAN;
 }
 
 /**
@@ -296,6 +297,7 @@ float ADS1115::getMvPerCount() {
       return ADS1115_MV_0P256;
       break;       
   }
+  return NAN;
 }
 
 // CONFIG register
@@ -603,7 +605,7 @@ uint16_t getValueFromBits(uint16_t extractFrom, int high, int length) {
  */
 void ADS1115::showConfigRegister() {
     I2Cdev::readWord(devAddr, ADS1115_RA_CONFIG, buffer);
-    uint16_t configRegister =buffer[0];    
+    //uint16_t configRegister =buffer[0];    
     
     
     #ifdef ADS1115_SERIAL_DEBUG

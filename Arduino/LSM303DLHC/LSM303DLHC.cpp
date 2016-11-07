@@ -136,7 +136,7 @@ bool LSM303DLHC::testConnection() {
  * @see LSM303DLHC_RATE_1344_N_5376_LP
  */
 void LSM303DLHC::setAccelOutputDataRate(uint16_t rate) {
-  uint8_t writeVal;
+  uint8_t writeVal = 0xff;
   
   if (rate == 0) {
     writeVal = LSM303DLHC_ODR_RATE_POWERDOWN;
@@ -209,6 +209,7 @@ uint16_t LSM303DLHC::getAccelOutputDataRate() {
   } else if (rate == LSM303DLHC_ODR_RATE_1344_N_5376_LP) {
     return 5376;
   }
+  return 0xffff;
 }
 
 /*Enables or disables the accelerometer low power mode
@@ -1897,7 +1898,7 @@ bool LSM303DLHC::getMagTemperatureEnabled(){
 @see LSM303DLHC_DO_RATE_220
 */
 void LSM303DLHC::setMagOutputDataRate(uint8_t rate){
-  uint8_t writeBit;
+  uint8_t writeBit = 0xff;
   if (rate == 0){
     writeBit = LSM303DLHC_DO_RATE_0;
   } else if (rate == 1){
@@ -1956,6 +1957,7 @@ uint8_t LSM303DLHC::getMagOutputDataRate(){
   } else if (rate == LSM303DLHC_DO_RATE_220){
     return 220; 
   }
+  return 0xff;
 }
 
 //CRB_REG_M, rws
@@ -1974,7 +1976,7 @@ uint8_t LSM303DLHC::getMagOutputDataRate(){
 @see LSM303DLHC_GN_1100
 */
 void LSM303DLHC::setMagGain(uint16_t gain){
-  uint8_t writeBit;
+  uint8_t writeBit = 0xff;
   if (gain == 230){
     writeBit = LSM303DLHC_GN_230;
   } else if (gain == 330){
@@ -2025,6 +2027,7 @@ uint16_t LSM303DLHC::getMagGain(){
   } else if (gain == LSM303DLHC_GN_1100){
     return 1100; 
   } 
+  return 0xff;
 }
 
 //MR_REG_M, rw

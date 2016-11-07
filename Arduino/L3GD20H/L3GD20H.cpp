@@ -102,7 +102,6 @@ uint8_t L3GD20H::getDeviceID() {
  */
 void L3GD20H::setOutputDataRate(uint16_t rate) {
 	uint8_t writeVal;
-	bool lowODRwriteVal;
 
 	if (rate ==12) {
 		writeVal = L3GD20H_RATE_100_12;
