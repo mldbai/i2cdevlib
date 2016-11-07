@@ -274,7 +274,6 @@ class BMA150 {
         private:
         uint8_t devAddr;
         uint8_t buffer[6];
-        uint8_t mode;
 };
 
 #endif /* _BMA150_H_ */

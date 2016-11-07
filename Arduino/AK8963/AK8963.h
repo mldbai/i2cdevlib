@@ -145,7 +145,6 @@ class AK8963 {
     private:
         uint8_t devAddr;
         uint8_t buffer[6];
-        uint8_t mode;
 };
 
 #endif /* _AK8963_H_ */
