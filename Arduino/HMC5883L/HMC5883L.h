@@ -73,6 +73,7 @@ THE SOFTWARE.
 #define HMC5883L_RATE_15            0x04
 #define HMC5883L_RATE_30            0x05
 #define HMC5883L_RATE_75            0x06
+#define HMC5883L_RATE_160           0x07
 
 #define HMC5883L_BIAS_NORMAL        0x00
 #define HMC5883L_BIAS_POSITIVE      0x01
